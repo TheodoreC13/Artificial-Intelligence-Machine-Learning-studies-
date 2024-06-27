@@ -3,6 +3,8 @@ This is work from my introduction to Artificial Intelligence class I took in col
 
 #  ~ Project 1 ~
 
+![alt text](https://github.com/TheodoreC13/Artificial-Intelligence-Machine-Learning-studies-/blob/main/Project1/maze.png)
+
 In project 1 the pacman agent is tasked with finding a particular location and collecting food efficiently. This is done via a collection of search algorithms. Of the flies provided, only 'search.py' and 'searchAgents.py' were written by me (and my partner). The rest were provided as part of the project.
 * Finding a fixed dot using Depth First Search
 

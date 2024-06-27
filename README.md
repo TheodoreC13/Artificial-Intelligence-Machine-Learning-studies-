@@ -109,19 +109,22 @@ With epsilon implemented the crawler `python crawler.py` should be functional.
 > 
 > inference.py
 
-In this project our pacman agent will use sensors to locate and eat invisible ghosts. Pacman is equipped with sonar that provide noisy readings of the Manhattan distance to each ghost. The game ends when Pacman has eaten all of the ghosts. `python busters.py` to play on your own. The blocks of color indicate where the ghost could possibly be given the noisy distance readings provided to pacman. The estimation shown is crude and we want to do better. We used Bayesian Networks to better estimate the location of the ghosts for pacman. This project was frustrating with certain solution implementation choices I made having to be refactored later, or just end up being detrimental.
+In this project our pacman agent will use sensors to locate and eat invisible ghosts. Pacman is equipped with sonar that provide noisy readings of the Manhattan distance to each ghost. The game ends when Pacman has eaten all of the ghosts. `python busters.py` to play on your own. The blocks of color indicate where the ghost could possibly be given the noisy distance readings provided to pacman. The estimation shown is crude and we want to do better. We used Bayesian Networks to better estimate the location of the ghosts for pacman. This project was frustrating with certain solution implementation choices I made having to be refactored later, or just end up being detrimental. For this project most of the running / testing is done via the autograder. `python autograder.py -q qx` x being the question number. There is also the flag `--no-graphics` to run the test without the graphic.
+
 ![alt text](https://github.com/TheodoreC13/Artificial-Intelligence-Machine-Learning-studies-/blob/main/Project3/busters.png)
 
-* Question 1: Observation Probability -
-* Question 2: Exact Ingerence Observation -
-* Question 3: Exact Inference with Time Elapse
-* Question 4: Exact Interface full test
-* Question 5: Approximate Inference Initialization and Beliefs
-* Question 6: Approximate Inference Observation
-* Question 7: Approximate Inference with Time Elapse
-* Question 8: Joint Particle Filter Observation
-* Question 9: Joint Particle Filter Observation
-* Question 10: Joint Particle Filter Time Elapse and Full Test
+* Question 1: Observation Probability - Take an observation (noisy distance reading to the ghosts), pacman's position, the ghost's position, the position of ghost's jail, and return the probability of the reading. Very simply: P(noisyDistance | pacmanPosition, ghostPosition) There is a special case after a ghost has been jailed where our distance sensor will return `none`. So if the ghost's position is in jail the probability of it being in jail is 1, conversely if the distance reading is not `none` then the ghost is in jail with probability 0. 
+* Question 2: Exact Ingerence Observation - We now update the agent's belief distribution given an observation from pacman's sensors. 
+* Question 3: Exact Inference with Time Elapse - Observation isn't the only way we can update our agent. Pacman understands how the ghosts move and can predict to varying degree the movement of ghosts. In particular: ghosts can not move through walls, and they only move 1 step at a time. This also means if pacman recieves a bunch of readings that a ghost is near but one reading that the ghost is far, the far reading can be dismissed as pacman knows the ghost can not move that far in only one move. 
+* Question 4: Exact Interface full test - Now a greedy hunting strategy is implemented and pacman will hunt down the closest ghost. Beforehand pacman was moving by randomly selecting a valid action. 
+* Question 5: Approximate Inference Initialization and Beliefs - A particle filtering algorithm is implemented for tracking a single ghost.  
+* Question 6: Approximate Inference Observation - Weight distribution is added to the particle filter
+* Question 7: Approximate Inference with Time Elapse - Adds a time dimension to the particle filter increasing accuracy
+* Question 8: Joint Particle Filter Observation - A new ghost type is added that avoids other ghosts. To track all ghosts simultaneously a dynamic Bayes Net is implemented. 
+* Question 9: Joint Particle Filter Observation - Weighting and resampling for the particle filter. 
+* Question 10: Joint Particle Filter Time Elapse and Full Test - Elapsed time is the final part of the Particle filter implemented.
+  
+![alt text](https://github.com/TheodoreC13/Artificial-Intelligence-Machine-Learning-studies-/blob/main/Project3/disperse.png)
 
 # ~ Project 4 ~
 ### Files I edited
@@ -136,7 +139,7 @@ This was a group project on Linear Regression I worked on with a partner, name r
 * Gradient Descent
 * Random Fourier Features
 
-and wrote about our findings in `HW4-Answers.pdf`. The data used is in the folder titled `data`.
+and wrote about our findings in `HW4-Answers.pdf`. The data used is in the folder titled `data`. This code in particular is heavily commented by the professor explaining the math and objective of different functions, as well as us for parts of our solution. There are many commented lines of other solution attempts that we left in on purpose as we were testing various solutions and implementations. 
 
 ### Linear Regression
 Here are the questions we answered for linear regression in our pdf

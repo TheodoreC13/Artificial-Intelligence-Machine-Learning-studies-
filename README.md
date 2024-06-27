@@ -1,5 +1,5 @@
 # Artificial-Intelligence-Machine-Learning-studies-
-This is work from my introduction to Artificial Intelligence class I took in college. There are 4 projects here, the first 3 are based on the UC Berkeley pacman project (http://ai.berkeley.edu/home.html). For the first three projects you can play pacman with the command `python pacman.py` Utilizing the layout flag `-l` or `--layout` proceeding by `tinyMaze` `mediumMaze` `bigMaze` for alternate maps. For all options you can run `python pacman.py -h`. I've removed me and my partner's names from the files but the work is unchanged. 
+This is work from my introduction to Artificial Intelligence class I took in college. There are 4 projects here, the first 3 are based on the UC Berkeley pacman project (http://ai.berkeley.edu/home.html). For the first three projects you can play pacman with the command `python pacman.py` Utilizing the layout flag `-l` or `--layout` proceeding by `tinyMaze` `mediumMaze` `bigMaze` for alternate maps. For all options you can run `python pacman.py -h`. I've removed me and my partner's names from the files but the work is unchanged. Each of these projects is broken down into questions, which functionally segmented the large projects into portions. I have explanations on what we were supposed to implement for each part.
 
 #  ~ Project 1 ~
 
@@ -10,7 +10,7 @@ This is work from my introduction to Artificial Intelligence class I took in col
 > 
 > searchAgents.py
 
-In project 1 the pacman agent is tasked with finding a particular location and collecting food efficiently. This is done via a collection of search algorithms. Of the flies provided, only 'search.py' and 'searchAgents.py' were written by me (and my partner). The rest were provided as part of the project.
+In project 1 the pacman agent is tasked with finding a particular location and collecting food efficiently. This is done via a collection of search algorithms.
 * Question 1: Finding a fixed dot using Depth First Search
 
 `python pacman.py -l mediumMaze -p SearchAgent`
@@ -43,7 +43,7 @@ In project 1 the pacman agent is tasked with finding a particular location and c
 >
 > valueIterationAgents.py
 
-Project 2 was based around Markov Decision Process and Reinforcement Learning. MDP to describe a fully observable environment and Reinforcement Learning to learn an optimal policy. In this project I implement value iteration and q-learning. Our agents were first tested on gridworld then applied to a simulated robot controller and pacman. To start in manual mode `python gridworld.py -m` can be run. For full range of options run `python gridworld.py -h`. The Default agent moves randomly. Suboptimal. I either didn't finish the q value portion of this or I have restored the wrong backups from my old hard drive. In particular `def getQValue(self, state, action):` , `def update(self, state, action, nextState, reward):` , and `def final(self, state):` are empty. 
+Project 2 is based around Markov Decision Process and Reinforcement Learning. MDP to describe a fully observable environment and Reinforcement Learning to learn an optimal policy. In this project I implement value iteration and q-learning. Our agents were first tested on gridworld then applied to a simulated robot controller and pacman. To start in manual mode `python gridworld.py -m` can be run. For full range of options run `python gridworld.py -h`. The Default agent moves randomly. Suboptimal. I either didn't finish the q value portion of this or I have restored the wrong backups from my old hard drive. In particular `def getQValue(self, state, action):` , `def update(self, state, action, nextState, reward):` , and `def final(self, state):` are empty. 
 
 * Question 1: Standard Value Iteration via Bellman Upate - 
   
@@ -104,5 +104,81 @@ With epsilon implemented the crawler `python crawler.py` should be functional.
 * Question 10: Approximate Q-Learning - I do not think I finished this portion of the project. I may have run into time constraints with other classes. I strongly remember taking Cryptography the same semester and having to do a lot of studying and work for that class. As such this portion was unfinished.
 
 # ~ Project 3 ~
+### Files I edited:
+> busterAgents.py
+> 
+> inference.py
+
+In this project our pacman agent will use sensors to locate and eat invisible ghosts. Pacman is equipped with sonar that provide noisy readings of the Manhattan distance to each ghost. The game ends when Pacman has eaten all of the ghosts. `python busters.py` to play on your own. The blocks of color indicate where the ghost could possibly be given the noisy distance readings provided to pacman. The estimation shown is crude and we want to do better. We used Bayesian Networks to better estimate the location of the ghosts for pacman. This project was frustrating with certain solution implementation choices I made having to be refactored later, or just end up being detrimental.
+![alt text](https://github.com/TheodoreC13/Artificial-Intelligence-Machine-Learning-studies-/blob/main/Project3/busters.png)
+
+* Question 1: Observation Probability -
+* Question 2: Exact Ingerence Observation -
+* Question 3: Exact Inference with Time Elapse
+* Question 4: Exact Interface full test
+* Question 5: Approximate Inference Initialization and Beliefs
+* Question 6: Approximate Inference Observation
+* Question 7: Approximate Inference with Time Elapse
+* Question 8: Joint Particle Filter Observation
+* Question 9: Joint Particle Filter Observation
+* Question 10: Joint Particle Filter Time Elapse and Full Test
 
 # ~ Project 4 ~
+### Files I edited
+> hw4.py
+>
+> HW4-Answers.pdf
+>
+> README.txt
+
+This was a group project on Linear Regression I worked on with a partner, name removed. `README.txt` is essentially work cited + instructions on how to run our project( we had no special instructions). For this project we implemented
+* Linear Regression
+* Gradient Descent
+* Random Fourier Features
+
+and wrote about our findings in `HW4-Answers.pdf`. The data used is in the folder titled `data`.
+
+### Linear Regression
+Here are the questions we answered for linear regression in our pdf
+````
+Linear Regression
+(a) Use your closed form implementation to fit a model to the data in 1D-no-noise-lin.txt and
+2D-noisy-lin.txt. What is the loss of the fit model in both cases? Include plots for both. Note:
+for some of these datasets the y-intercept will be non-zero, make sure you handle this case!
+(b) What happens when you’re using the closed form solution and one of the features (columns of X)
+is duplicated? Explain why. Note: you may want to test this out with your code as a useful first
+step, but you should think critically about what is happening and why.
+(c) Does the same thing happen if one of the training points (rows of X) is duplicated? Explain why.
+(d) Does the same thing happen with Gradient Descent? Explain why.
+````
+### Gradient Descent
+Here are the questions for gradient descent answered in our pdf
+````
+Gradient Descent
+(a) Now use your Gradient Descent implementation to fit a model to 1D-no-noise-lin.txt with
+alpha=0.05, num iters=10, and initial Theta set to the zero vector. What is the output (the
+full list of (θ, loss) tuples for each of the 10 iterations)?
+(b) Using the default parameters for alpha and num iters, and with initial Theta set to 0, do you
+get the same model parameters as you did with the closed form solution? the same loss? Report
+this for both 1D-no-noise-lin.txt and 2D-noisy-lin.txt.
+(c) Find a set of values of the learning rate and iterations where you get the same answers and a set
+of values where the answers are noticeably different. Explain what’s going on in both cases, and
+for both datasets 1D-no-noise-lin.txt and 2D-noisy-lin.txt.
+````
+### Random Fourier Features
+Here are the questions for random fourier features answered in our pdf. This section gave us a lot of trouble.
+````
+Random Fourier Features
+(a) Use your Random Fourier Features implementation to fit models for 1D-exp-samp.txt, 1D-exp-uni.txt,
+1D-quad-uni.txt, and 1D-quad-uni-noise.txt, each with 3 different values for K: small,
+medium, and large. The small value should noticeably under-fit the data, the large value should
+fit almost perfectly, and the medium value should be somewhere in between. Report the values
+for K and include graphs for each of the four datasets (so you should report 12 values of K and
+have 12 graphs in total).
+(b) EXTRA CREDIT: What happens with Random Fourier Features if you try to predict a value
+far away from any points in the training dataset? Modify the plotting functions (or write your
+own) and show what the model looks like far away from the training points. Describe what you
+are seeing qualitatively, compare the model’s output with the “true” output quantitatively, and
+explain why this is happening. You may want to run these experiments multiple times to get a
+better understanding of what is going on.
+````

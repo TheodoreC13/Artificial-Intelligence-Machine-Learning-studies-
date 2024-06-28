@@ -1,6 +1,16 @@
 # Artificial-Intelligence-Machine-Learning-studies-
-This is work from my introduction to Artificial Intelligence class I took in college. There are 4 projects here, the first 3 are based on the UC Berkeley pacman project (http://ai.berkeley.edu/home.html). For the first three projects you can play pacman with the command `python pacman.py` Utilizing the layout flag `-l` or `--layout` proceeding by `tinyMaze` `mediumMaze` `bigMaze` for alternate maps. For all options you can run `python pacman.py -h`. I've removed me and my partner's names from the files but the work is unchanged. Each of these projects is broken down into questions, which functionally segmented the large projects into portions. I have explanations on what we were supposed to implement for each part. 
+This repository contains four projects from my introduction to Artificial Intelligence course, focusing on key concepts in search algorithms, machine learning, and data modeling. The first three projects are inspired by the UC Berkeley Pacman project and cover a range of topics:
+* Project 1: Implementation of various search algorithms, where a Pacman agent navigates mazes to efficiently collect food.
+* Project 2: Exploration of Markov Decision Processes (MDP) and Reinforcement Learning, applying value iteration and Q-learning in different environments.
+* Project 3: Use of Bayesian networks and particle filtering to help Pacman track and capture invisible ghosts with noisy sensor data.
 
+The fourth project dives into data modeling techniques:
+* Project 4: Focus on linear regression to model data relationships, with gradient descent for optimization and random Fourier features for handling complex patterns, enhancing both speed and accuracy.
+
+These projects showcase a broad spectrum of AI and machine learning principles, applied in engaging and practical scenarios.I've removed me and my partner's names from the files but the work is unchanged. Each of these projects is broken down into questions, which functionally segmented the large projects into portions. I have explanations on what we were supposed to implement for each part. 
+
+
+For the first project you can play pacman with the command `python pacman.py` Utilizing the layout flag `-l` or `--layout` proceeding by `tinyMaze` `mediumMaze` `bigMaze` for alternate maps. For all options you can run `python pacman.py -h`. 
 #  ~ Project 1 ~
 
 ![alt text](https://github.com/TheodoreC13/Artificial-Intelligence-Machine-Learning-studies-/blob/main/Project1/maze.png)
@@ -43,7 +53,7 @@ In project 1 the pacman agent is tasked with finding a particular location and c
 >
 > valueIterationAgents.py
 
-Project 2 is based around Markov Decision Process and Reinforcement Learning. MDP to describe a fully observable environment and Reinforcement Learning to learn an optimal policy. In this project I implement value iteration and q-learning. Our agents were first tested on gridworld then applied to a simulated robot controller and pacman. To start in manual mode `python gridworld.py -m` can be run. For full range of options run `python gridworld.py -h`. The Default agent moves randomly. Suboptimal. I didn't quite finish this project in time. In particular `def getQValue(self, state, action):` , `def update(self, state, action, nextState, reward):` , and `def final(self, state):` are empty for the "Approximate Q-Learning" section.
+Project 2 is based around Markov Decision Process(MDP) and Reinforcement Learning. MDP to describe a fully observable environment and Reinforcement Learning to learn an optimal policy. In this project I implement value iteration and q-learning. Our agents were first tested on gridworld then applied to a simulated robot controller and pacman. To start in manual mode `python gridworld.py -m` can be run. For full range of options run `python gridworld.py -h`. The Default agent moves randomly. Suboptimal. I didn't quite finish this project in time. In particular `def getQValue(self, state, action):` , `def update(self, state, action, nextState, reward):` , and `def final(self, state):` are empty for the "Approximate Q-Learning" section.
 
 * Question 1: Standard Value Iteration via Bellman Upate - 
   
